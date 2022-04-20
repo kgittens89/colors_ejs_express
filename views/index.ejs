@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('partials/head.ejs') %> 
+<body>
+    <%- include ('partials/nav.ejs') %>   
+    <div>
+    <% for(let i = 0; i < colors.length; i++) { %> 
+        <% const color = colors[i] %> 
+        <a href="/colors/<%=i%>">
+            <p> <%= color.color %> </p>
+        </a>
+    <% } %> 
+    </div>
+</body>
+</html>
