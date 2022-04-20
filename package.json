@@ -1,0 +1,26 @@
+{
+  "name": "full-crud-collab-lab",
+  "version": "1.0.0",
+  "description": "![Full Crud](https://mfikri.com/assets/images/564f31b268c76579b93d0deda8be955a.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SEIR-321-Batch/Full-CRUD-Collab-Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SEIR-321-Batch/Full-CRUD-Collab-Lab/issues"
+  },
+  "homepage": "https://github.com/SEIR-321-Batch/Full-CRUD-Collab-Lab#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3"
+  }
+}
