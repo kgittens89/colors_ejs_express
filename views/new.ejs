@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('partials/head.ejs') %> 
+<body onload="addColor()">
+    <%- include ('partials/nav.ejs') %>
+
+        <h1 class="createNew"> Create New Color </h1>
+
+    <form method="POST" action="/colors">
+        <div class="createNewInfo">
+
+            <div>
+                <label for="color"> Color: </label>
+                <input id="color" name="color" type="text"/>
+            </div>
+
+            <div>
+                <label for="value"> Value:  </label>
+                <input id="value" name="value" type="text" />
+            </div>
+
+            <div class="newInputArea">
+                <input type="submit" class="newInput" value="Add New Color" />
+            </div>
+   
+</body>
+</html>
