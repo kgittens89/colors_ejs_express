@@ -41,6 +41,17 @@ app.delete('/colors/:id', (req, res) => {
     res.redirect('/colors')
 })
 
+app.get('/colors/:id/edit', (req, res) => {
+    const context = { color: colors[req.params.id], id: req.params.id }
+    
+    res.render('edit.ejs', context)
+})
+
+app.put('/colors/:id', (req, res) => {
+    colors[req.params.id] = req.body
+    res.redirect(`/colors/${req.params.id}`)
+})
+
 
 app.listen(PORT, function () {
 	console.log(`Server is running on ${PORT}`);
