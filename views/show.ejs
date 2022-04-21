@@ -5,6 +5,11 @@
     <%- include ('partials/nav.ejs') %>
     <h1><%= color.color %> </h1>
     <div class="color-box" style="height: 200px"><%= color.value %> </div>
+
+    <form method="POST" action="/colors/<%=id%>?_method=DELETE">
+        <input type="submit" value="Delete Color">
+    </form>
+
     <script>
         function addColor() {
         const colorBox = document.querySelector('.color-box')

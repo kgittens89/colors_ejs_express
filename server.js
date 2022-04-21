@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const PORT = process.env.PORT || 4000;
+const methodOverride = require('method-override');
 
 const colors = require('./colors.js');
 const res = require('express/lib/response');
@@ -10,6 +11,7 @@ const res = require('express/lib/response');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 app.get('/', function (req, res) {
     res.redirect('/colors')
@@ -17,7 +19,6 @@ app.get('/', function (req, res) {
 
 app.get('/colors', (req, res) => {
     const context = { colors: colors }
-    console.log(context)
     res.render('index.ejs', context)
 })
 
@@ -26,7 +27,6 @@ app.get('/colors/new', (req, res) => {
 })
 
 app.post('/colors', (req, res) => {
-    console.log(req.body)
     colors.push(req.body)
     res.redirect('/')
 })
@@ -34,6 +34,11 @@ app.post('/colors', (req, res) => {
 app.get('/colors/:id', (req, res) => {
     const context = { color: colors[req.params.id], id: req.params.id }
     res.render('show.ejs', context)
+})
+
+app.delete('/colors/:id', (req, res) => {
+    colors.splice(req.params.id, 1)
+    res.redirect('/colors')
 })
 
 
